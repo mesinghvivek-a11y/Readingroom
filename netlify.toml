@@ -1,0 +1,10 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# Without this, refreshing on /owner or /student directly gives a 404 —
+# Netlify needs to always serve index.html and let React Router handle the path.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
